@@ -18,6 +18,8 @@ export type Standing = {
 
 export type Group = [Standing, Standing, Standing, Standing];
 
+export type ThirdPlacers = [Standing, Standing, Standing, Standing, Standing, Standing];
+
 export type GroupStage = {
     a: Group,
     b: Group,
