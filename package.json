@@ -1,0 +1,9 @@
+{
+  "name": "dugarry-backend",
+  "version": "0.1",
+  "description": "Backend for Euro 2020 progression app.",
+  "main": "src/index.js",
+  "repository": "git@github.com:jdahodgkinson/dugarry-backend.git",
+  "author": "Jack Hodgkinson <jdahodgkinson@gmail.com>",
+  "license": "GPL"
+}
