@@ -6,12 +6,12 @@ const port = 3000;
 app.get('/', (_, res) => {
   res.send(
     {
-      'name': 'Football',
+      'name': 'football',
       'comingHome': true
     }
   );
 });
 
 app.listen(port, () => {
-  console.log(`Dugarrry listening at http://localhost:${port}`); 
+  console.log(`dugarry listening at http://localhost:${port}`); 
 });

@@ -1,0 +1,107 @@
+{
+  "data": [{
+    "position": 1,
+    "played": 0,
+    "team_id": 18647,
+    "team_name": "France",
+    "short_code": "FRA",
+    "team_logo": "https:\/\/cdn.sportmonks.com\/images\/soccer\/teams\/23\/18647.png",
+    "goals": "0:0",
+    "goal_diff": 0,
+    "wins": 0,
+    "lost": 0,
+    "draws": 0,
+    "points": 0,
+    "description": "8th Finals",
+    "recent_form": "",
+    "fairplay_points_lose": 0
+  }, {
+    "position": 2,
+    "played": 0,
+    "team_id": 18660,
+    "team_name": "Germany",
+    "short_code": "GER",
+    "team_logo": "https:\/\/cdn.sportmonks.com\/images\/soccer\/teams\/4\/18660.png",
+    "goals": "0:0",
+    "goal_diff": 0,
+    "wins": 0,
+    "lost": 0,
+    "draws": 0,
+    "points": 0,
+    "description": "8th Finals",
+    "recent_form": "",
+    "fairplay_points_lose": 0
+  }, {
+    "position": 3,
+    "played": 0,
+    "team_id": 18732,
+    "team_name": "Hungary",
+    "short_code": "HUN",
+    "team_logo": "https:\/\/cdn.sportmonks.com\/images\/soccer\/teams\/12\/18732.png",
+    "goals": "0:0",
+    "goal_diff": 0,
+    "wins": 0,
+    "lost": 0,
+    "draws": 0,
+    "points": 0,
+    "description": "Possible 8th Finals",
+    "recent_form": "",
+    "fairplay_points_lose": 0
+  }, {
+    "position": 4,
+    "played": 0,
+    "team_id": 18701,
+    "team_name": "Portugal",
+    "short_code": "POR",
+    "team_logo": "https:\/\/cdn.sportmonks.com\/images\/soccer\/teams\/13\/18701.png",
+    "goals": "0:0",
+    "goal_diff": 0,
+    "wins": 0,
+    "lost": 0,
+    "draws": 0,
+    "points": 0,
+    "description": null,
+    "recent_form": "",
+    "fairplay_points_lose": 0
+  }],
+  "meta": {
+    "subscription": {
+      "started_at": {
+        "date": "2021-06-07 08:05:41.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "trial_ends_at": {
+        "date": "2021-06-21 09:05:03.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "ends_at": {
+        "date": "2021-07-07 08:05:37.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    "plans": [{
+      "name": "EURO 2020",
+      "price_monthly": 39,
+      "price_yearly": 390,
+      "request_limit": "2000,60",
+      "sport": "Soccer"
+    }, {
+      "name": "Free Standings and Live Standings (3 months)",
+      "request_limit": "2000,60",
+      "sport": "Soccer"
+    }],
+    "add-ons": [],
+    "sports": [{
+      "id": 1,
+      "name": "Soccer",
+      "current": true
+    }, {
+      "id": 1,
+      "name": "Soccer",
+      "current": true
+    }]
+  }
+}
