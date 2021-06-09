@@ -1,18 +1,12 @@
 import express from 'express';
-import { getGroup } from './group_stage_builder';
+import { get3rdPlaceTable } from './group_stage_builder';
 
 const app = express();
 const port = 3000;
 
-console.log(getGroup(225403));
-
-app.get('/', (_, res) => {
-  res.send(
-    {
-      'name': 'football',
-      'comingHome': true
-    }
-  );
+app.get('/', async (_, res) => {
+  const table = await get3rdPlaceTable();
+  res.send(table);
 });
 
 app.listen(port, () => {
