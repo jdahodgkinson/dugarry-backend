@@ -2,22 +2,12 @@ import { Group, GroupStage, ThirdPlaceTable, Standing } from './types';
 import fetch from 'node-fetch';
 import * as fs from 'fs';
 
-/* const getGroup = (id: number): Group => { */
-/*   const path = `./test/test_data/${id}.json`; */
-/*   const buf = fs.readFileSync(path); */
-/*   const res = JSON.parse(buf.toString()); */
-/*   return res['data']; */
-/* }; */
-
 export const getGroupApi = async (id: number): Promise<Group> => {
   const apiToken = process.env.API_TOKEN;
-  // TODO: Change this to live standings.
-  const url = `https://soccer.sportmonks.com/api/v2.0/standings/season/15733?api_token=${apiToken}&group_id=${id}`;
+  const url = `https://soccer.sportmonks.com/api/v2.0/standings/season/live/15733?api_token=${apiToken}&group_id=${id}`;
   const response = await fetch(url);
   const data = await response.json();
-  const groups = data['data'];
-  const desiredGroup = groups.filter((group: Record<string, unknown>) => group.id == id).pop();
-  return desiredGroup.standings.data;
+  return data.data;
 };
 
 const getGS = async (): Promise<GroupStage> => {
