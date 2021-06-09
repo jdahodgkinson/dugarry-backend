@@ -3,17 +3,16 @@ import * as fs from 'fs';
 import { get3rdPlaceTable } from './group_stage_builder';
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 5000;
 
 const callApi = async () => {
-  const now = new Date(Date.now());
   try {
     const table = await get3rdPlaceTable();
     fs.writeFileSync('./3rdPlaceTable.json', JSON.stringify(table));
-    console.log(`[${now.toTimeString()}] Updated table from API.`);
+    console.log('Updated table from API.');
   }
   catch (err) {
-    console.error(`[${now.toTimeString()}] ${err}`);
+    console.error(err);
   }
 };
 
@@ -27,6 +26,6 @@ app.get('/', (_, res) => {
   res.send(table);
 });
 
-app.listen(port, () => {
-  console.log(`dugarry listening at http://localhost:${port}`); 
+app.listen(PORT, () => {
+  console.log(`dugarry listening on ${PORT}`); 
 });
