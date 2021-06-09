@@ -5,7 +5,6 @@
   "main": "src/index.js",
   "repository": "git@github.com:jdahodgkinson/dugarry-backend.git",
   "author": "Jack Hodgkinson <jdahodgkinson@gmail.com>",
-  "license": "GPL",
   "dependencies": {
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
@@ -26,8 +25,9 @@
     "ignore": ["*.json"]
   },
   "scripts": {
-    "start": "nodemon -r dotenv/config src/index.ts",
-    "build": "tsc --project ./ && node -r dotenv/config build/index.js"
+    "dev": "nodemon -r dotenv/config src/index.ts",
+    "start": "node -r dotenv/config build/index.js",
+    "build": "tsc --project ./"
   },
   "engines": {
     "node": "16.3.0"
