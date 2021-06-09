@@ -62,27 +62,24 @@ var express_1 = __importDefault(require("express"));
 var fs = __importStar(require("fs"));
 var group_stage_builder_1 = require("./group_stage_builder");
 var app = express_1["default"]();
-var port = 3000;
+var PORT = process.env.PORT || 5000;
 var callApi = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var now, table, err_1;
+    var table, err_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                now = new Date(Date.now());
-                _a.label = 1;
-            case 1:
-                _a.trys.push([1, 3, , 4]);
+                _a.trys.push([0, 2, , 3]);
                 return [4 /*yield*/, group_stage_builder_1.get3rdPlaceTable()];
-            case 2:
+            case 1:
                 table = _a.sent();
                 fs.writeFileSync('./3rdPlaceTable.json', JSON.stringify(table));
-                console.log("[" + now.toTimeString() + "] Updated table from API.");
-                return [3 /*break*/, 4];
-            case 3:
+                console.log('Updated table from API.');
+                return [3 /*break*/, 3];
+            case 2:
                 err_1 = _a.sent();
-                console.error("[" + now.toTimeString() + "] " + err_1);
-                return [3 /*break*/, 4];
-            case 4: return [2 /*return*/];
+                console.error(err_1);
+                return [3 /*break*/, 3];
+            case 3: return [2 /*return*/];
         }
     });
 }); };
@@ -94,6 +91,6 @@ app.get('/', function (_, res) {
     var table = JSON.parse(buf.toString());
     res.send(table);
 });
-app.listen(port, function () {
-    console.log("dugarry listening at http://localhost:" + port);
+app.listen(PORT, function () {
+    console.log("dugarry listening on " + PORT);
 });

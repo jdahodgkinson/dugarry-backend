@@ -1,2 +1,1 @@
-yarn build
-web: node build/index.js
+web: yarn build
