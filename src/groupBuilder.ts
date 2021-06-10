@@ -45,8 +45,8 @@ const goalsScored = (s: Standing): number => {
   return parseInt(s.goals[0]);
 };
 
-const qualiTable = (): Record<string, number> => {
-  const buf = fs.readFileSync('./qualifier_ranking.json');
+const getQualiTable = (): Record<string, number> => {
+  const buf = fs.readFileSync('./public/qualiRank.json');
   return JSON.parse(buf.toString());
 };
 
@@ -57,35 +57,35 @@ export const get3rdPlaceTable = async (): Promise<ThirdPlaceTable> => {
 };
 
 const standingSort = (first: Standing, second: Standing): number => {
-  const points_diff = first.points - second.points;
-  if (points_diff != 0) {
-    return points_diff;
+  const pointsDiff = first.points - second.points;
+  if (pointsDiff != 0) {
+    return pointsDiff;
   }
   
-  const goal_diff = first.goal_diff - second.goal_diff;
-  if (goal_diff != 0) {
-    return goal_diff;
+  const goalDiff = first.goal_diff - second.goal_diff;
+  if (goalDiff != 0) {
+    return goalDiff;
   }
 
-  const scored_diff = goalsScored(first) - goalsScored(second);
-  if (scored_diff != 0) {
-    return scored_diff;
+  const scoredDiff = goalsScored(first) - goalsScored(second);
+  if (scoredDiff != 0) {
+    return scoredDiff;
   }
 
-  const wins_diff = first.wins - second.wins;
-  if (wins_diff != 0) {
-    return wins_diff;
+  const winsDiff = first.wins - second.wins;
+  if (winsDiff != 0) {
+    return winsDiff;
   }
 
-  const fair_diff = first.fairplay_points_lose - second.fairplay_points_lose;
-  if (fair_diff != 0) {
-    return fair_diff;
+  const fairDiff = first.fairplay_points_lose - second.fairplay_points_lose;
+  if (fairDiff != 0) {
+    return fairDiff;
   }
 
-  const quali_table = qualiTable();
-  const fst_code = first.short_code;
-  const snd_code = second.short_code;
+  const qualiTable = getQualiTable();
+  const fstCode = first.short_code;
+  const sndCode = second.short_code;
 
-  const quali_diff = quali_table[fst_code] - quali_table[snd_code];
-  return quali_diff;
+  const qualiDiff = qualiTable[fstCode] - qualiTable[sndCode];
+  return qualiDiff;
 };

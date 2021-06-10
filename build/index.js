@@ -60,7 +60,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 exports.__esModule = true;
 var express_1 = __importDefault(require("express"));
 var fs = __importStar(require("fs"));
-var group_stage_builder_1 = require("./group_stage_builder");
+var groupBuilder_1 = require("./groupBuilder");
 var app = express_1["default"]();
 var PORT = process.env.PORT || 5000;
 var callApi = function () { return __awaiter(void 0, void 0, void 0, function () {
@@ -69,10 +69,10 @@ var callApi = function () { return __awaiter(void 0, void 0, void 0, function ()
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
-                return [4 /*yield*/, group_stage_builder_1.get3rdPlaceTable()];
+                return [4 /*yield*/, groupBuilder_1.get3rdPlaceTable()];
             case 1:
                 table = _a.sent();
-                fs.writeFileSync('./3rdPlaceTable.json', JSON.stringify(table));
+                fs.writeFileSync('./public/3rdPlaceTable.json', JSON.stringify(table));
                 console.log('Updated table from API.');
                 return [3 /*break*/, 3];
             case 2:
@@ -86,7 +86,7 @@ var callApi = function () { return __awaiter(void 0, void 0, void 0, function ()
 callApi();
 setInterval(callApi, 12000);
 app.get('/', function (_, res) {
-    var path = './3rdPlaceTable.json';
+    var path = './public/3rdPlaceTable.json';
     var buf = fs.readFileSync(path);
     var table = JSON.parse(buf.toString());
     res.send(table);
