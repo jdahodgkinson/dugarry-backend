@@ -19,7 +19,7 @@ const callApi = async () => {
 callApi();
 setInterval(callApi, 12000);
 
-app.get('/', (_, res) => {
+app.get('/api/table', (_, res) => {
   const path = './public/3rdPlaceTable.json';
   const buf = fs.readFileSync(path);
   const table = JSON.parse(buf.toString());

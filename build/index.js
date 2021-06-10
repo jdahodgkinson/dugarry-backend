@@ -85,7 +85,7 @@ var callApi = function () { return __awaiter(void 0, void 0, void 0, function ()
 }); };
 callApi();
 setInterval(callApi, 12000);
-app.get('/', function (_, res) {
+app.get('api/table', function (_, res) {
     var path = './public/3rdPlaceTable.json';
     var buf = fs.readFileSync(path);
     var table = JSON.parse(buf.toString());
