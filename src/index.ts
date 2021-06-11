@@ -1,5 +1,6 @@
 import express from 'express';
 import * as fs from 'fs';
+import cors from 'cors';
 import { get3rdPlaceTable } from './groupBuilder';
 
 const app = express();
@@ -18,6 +19,8 @@ const callApi = async () => {
 
 callApi();
 setInterval(callApi, 12000);
+
+app.use(cors());
 
 app.get('/api/table', (_, res) => {
   const path = './public/3rdPlaceTable.json';
