@@ -57,22 +57,22 @@ export const get3rdPlaceTable = async (): Promise<ThirdPlaceTable> => {
 };
 
 const standingSort = (first: Standing, second: Standing): number => {
-  const pointsDiff = first.points - second.points;
+  const pointsDiff = second.points - first.points;
   if (pointsDiff != 0) {
     return pointsDiff;
   }
   
-  const goalDiff = first.goal_diff - second.goal_diff;
+  const goalDiff = second.goal_diff - first.goal_diff;
   if (goalDiff != 0) {
     return goalDiff;
   }
 
-  const scoredDiff = goalsScored(first) - goalsScored(second);
+  const scoredDiff = goalsScored(second) - goalsScored(first);
   if (scoredDiff != 0) {
     return scoredDiff;
   }
 
-  const winsDiff = first.wins - second.wins;
+  const winsDiff = second.wins - first.wins;
   if (winsDiff != 0) {
     return winsDiff;
   }
